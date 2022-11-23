@@ -14,26 +14,14 @@ export default function Login({navigation}) {
         const user = await createUserWithEmailAndPassword(auth, email, password);
         console.log("created user", user);
     }
-
-    const SignIn = async () => {
-        const user = await signInWithEmailAndPassword(auth, email, password);
-        console.log("Sing in", user.user.uid);
-    }
     return <View>
         <Text>Hello I am on the login page</Text>
         <TextInput onChangeText={(text) => setEmail(text)} placeholder="Email..."/>
         <TextInput onChangeText={(text) => setPassword(text)} placeholder="Password..."/>
         <Button onPress={() => {
             CreateUser();
-            navigation.navigate("Camera");
         }}
         title="Register"/>
-
-        <Button onPress={() => {
-            SignIn();
-            navigation.navigate('Camera');
-        }} 
-        title= "Sign In"/>
         
         <Button 
         title="Go to details"

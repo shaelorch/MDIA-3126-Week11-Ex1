@@ -25,7 +25,6 @@ export default function Login({navigation}) {
         <TextInput onChangeText={(text) => setPassword(text)} placeholder="Password..."/>
         <Button onPress={() => {
             CreateUser();
-            navigation.navigate("Camera");
         }}
         title="Register"/>
 
@@ -33,7 +32,7 @@ export default function Login({navigation}) {
             SignIn();
             navigation.navigate('Camera');
         }} 
-        title= "Sign In"/>
+        title= "Sign In";/>
         
         <Button 
         title="Go to details"

@@ -17,7 +17,7 @@ export default function Login({navigation}) {
 
     const SignIn = async () => {
         const user = await signInWithEmailAndPassword(auth, email, password);
-        console.log("Sing in", user.user.uid);
+        console.log("Sing in", user)
     }
     return <View>
         <Text>Hello I am on the login page</Text>
@@ -25,15 +25,8 @@ export default function Login({navigation}) {
         <TextInput onChangeText={(text) => setPassword(text)} placeholder="Password..."/>
         <Button onPress={() => {
             CreateUser();
-            navigation.navigate("Camera");
         }}
         title="Register"/>
-
-        <Button onPress={() => {
-            SignIn();
-            navigation.navigate('Camera');
-        }} 
-        title= "Sign In"/>
         
         <Button 
         title="Go to details"

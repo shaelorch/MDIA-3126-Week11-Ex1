@@ -25,15 +25,8 @@ export default function Login({navigation}) {
         <TextInput onChangeText={(text) => setPassword(text)} placeholder="Password..."/>
         <Button onPress={() => {
             CreateUser();
-            navigation.navigate("Camera");
         }}
         title="Register"/>
-
-        <Button onPress={() => {
-            SignIn();
-            navigation.navigate('Camera');
-        }} 
-        title= "Sign In"/>
         
         <Button 
         title="Go to details"

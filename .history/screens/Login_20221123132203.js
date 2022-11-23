@@ -3,7 +3,7 @@ import React from 'react';
 
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
-import auth from '../firebase/firebaseConfig.js';
+import auth from '../firebase/firebaseConfig';
 
 export default function Login({navigation}) {
 
@@ -12,12 +12,7 @@ export default function Login({navigation}) {
 
     const CreateUser = async () => {
         const user = await createUserWithEmailAndPassword(auth, email, password);
-        console.log("created user", user);
-    }
-
-    const SignIn = async () => {
-        const user = await signInWithEmailAndPassword(auth, email, password);
-        console.log("Sing in", user.user.uid);
+        console.log(user);
     }
     return <View>
         <Text>Hello I am on the login page</Text>
@@ -25,15 +20,8 @@ export default function Login({navigation}) {
         <TextInput onChangeText={(text) => setPassword(text)} placeholder="Password..."/>
         <Button onPress={() => {
             CreateUser();
-            navigation.navigate("Camera");
         }}
         title="Register"/>
-
-        <Button onPress={() => {
-            SignIn();
-            navigation.navigate('Camera');
-        }} 
-        title= "Sign In"/>
         
         <Button 
         title="Go to details"
